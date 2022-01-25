@@ -85,6 +85,37 @@ class Vehicle {
     }
 }
 
+class Car extends Vehicle { 
+    constructor(make, model, year, color, mileage) {
+        this.maximumPassengers = 6;
+        this.passenger = 0;
+        this.numberOfWheels = 4;
+        super(make, model, year, color, mileage);
+        this.maximumSpeed = 200;
+        this.fuel = 100;
+        this.scheduleService = false;
+    }
+    loadPassengers (num) {
+        if(this.passenger < this.maximumPassengers) {
+            return this.maximumPassengers = true;
+            console.log(`Room is available`);
+        }
+    }
+
+    start () {
+        if (this.fuel > 0) {
+            console.log(`you have gas`);
+        }
+    }
+
+    scheduleService (mileage) {
+        if (this.mileage > 30000) {
+            this.scheduleService == true;
+            return this.scheduleService;
+        }
+    }
+}
+
 //This exports things you want to use from this "module", more info in readme
 module.exports = {
     Vehicle
